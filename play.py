@@ -8,6 +8,7 @@ place=0
 players_in_game=[]
 deck = Deck()
 deck.shuffleDeck()
+deck.shuffleDeck()
 banner = '''
  ____                 ____                   
 |  _ \ __ _ ___ ___  |  _ \ ___  _   _ _ __  

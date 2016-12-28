@@ -26,10 +26,6 @@ class Deck:
 				else:
 					pass
 
-	def showDeck(self):
-		for card in self.cards:
-			print(card)
-
 	def shuffleDeck(self):
 	#Fisher-Yates shuffle 
 		for i in range (len(self.cards) -1,0,-1):
@@ -48,32 +44,12 @@ class Player:
 		self.name = name
 		self.hand = []
 
-	def __len__(self):
-		return len(hand)
-		
 	def drawCard(self, deck):
 		self.hand.append(deck.drawCard())
 		return self
 
-	def showHand(self):
-		for card in self.hand:
-			print(card)
-
 	def getHand(self):
 		arr_cards_in_hand=[]
 		for card in self.hand:
-			arr_cards_in_hand.append(card.getCard())#create a list of lists here
-		return arr_cards_in_hand #returns flatten list
-
-	def checkHand(self,current_card):
-		print("[+]%s needs a %s of any suit to play..."%(self.name, current_card[len(current_card)-2]))
-		time.sleep(2)
-		for card_in_hand in self.hand:
-			card=card_in_hand.getCard().split(' ')
-			if card[0] in current_card[len(current_card)-2]:
-				return True
-			else:
-				return False
-
-	def __repr__(self):
-		return '%s'%(self)
+			arr_cards_in_hand.append(card.getCard())
+		return arr_cards_in_hand
